@@ -2,6 +2,10 @@
     --primary: #c35f1b;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -13,7 +17,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-a { 
+a {
     color: #000000;
     text-decoration: none;
 }
@@ -33,7 +37,7 @@ ul {
     /* border-radius: 0px 0px 20px 20px; */
 }
 
-.header .title{
+.header .title {
     font-size: 1.6rem;
     font-weight: bold;
     text-align: center;
@@ -41,6 +45,7 @@ ul {
     margin-bottom: 25px;
 }
 
+/* Navbar */
 nav {
     grid-column: 1;
     background: transparent;
@@ -57,7 +62,7 @@ nav ul {
     margin-top: 150px;
 }
 
-.navbar a {
+nav .navbar a {
     font-weight: 500;
     padding: 10px 20px;
     /* color: #FFF; */
@@ -66,7 +71,7 @@ nav ul {
     align-items: center;
 }
 
-.navbar a::after {
+nav .navbar a::after {
     content: '';
     flex-direction: row;
     background: #000000;
@@ -77,11 +82,11 @@ nav ul {
     margin-top: 5px;
 }
 
-.navbar a:hover::after{
-    width: 90%;
+nav .navbar a:hover::after {
+    width: 100%;
 }
 
-.navbar button {
+nav .btn button {
     font-family: "Karla";
     font-size: .95rem;
     width: 150px;
@@ -99,30 +104,60 @@ nav ul {
     /* padding: 20px 30px; */
 }
 
-.navbar button:hover {
+nav .btn button:hover {
     border: 1px solid #000;
     background: #f4f4f4;
     color: #000;
     transition: all 0.2s ease;
 }
 
-.navbar button:hover::after {
+nav .btn button:hover::after {
     content: 'Baixar App';
 }
 
-.navbar button:hover>.svg-inline--fa {
+nav .btn button:hover>.svg-inline--fa {
     display: none;
 }
 
 /* HERO */
-.hero {
+.hero,
+.call {
     grid-column: 1 / 5;
     height: 80vh;
     background: #f4f4f4;
 }
 
+.features,
+.footer {
+    grid-column: 1 / 5;
+    height: 80vh;
+    background: #363636;
+}
+
+/* Responsive */
 @media (max-width: 920px) {
-    .header {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .container nav {
+        position: relative;
+        height: auto;
+    }
+    .container nav ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 15px 0px;
+        padding: 0;
+    }
+    nav .btn {
+        display: flex;
+        justify-content: center;
+    }
+    /* .header {
         grid-column: 1 / 5;
     }
 
@@ -130,5 +165,5 @@ nav ul {
         width: 100%;
         text-align: center;
         border-radius: 0;
-    }
+    } */
 }
